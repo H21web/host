@@ -95,6 +95,7 @@
 section,
 .section-t-space {
   padding-top: 20px;
+    overflow-x: hidden;
 }
 
 .section-b-space {
@@ -3332,6 +3333,7 @@ header .art-header-panel .panel .header-option .menu {
 .nft-details .nft-img {
   border-radius: 12px;
   border: 2px solid rgba(var(--white), 0.5);
+    overflow:hidden;
 }
 .nft-details .nft-info {
   display: -webkit-box;
