@@ -45,7 +45,7 @@
 <body>
    <div id="usernametg"> <!-- User profile card -->
    </div>
-   <img src="" id="userimg"/>
+   <div id="userimg"> </div>
    <p>Just text</p> <!-- Just some text for checking -->
    <a class="link" href="https://mihailgok.ru">Link</a> <!-- Just a link for checking -->
    <p class="hint">Some little hint</p> <!-- Just a hint text for checking -->
@@ -116,7 +116,7 @@
    profName.innerText = `${tg.initDataUnsafe.user.first_name}`;
    
    let pic = document.getElementById('userimg'); // Create an img
-   pic.src = tg.initDataUnsafe.user.photo_url; // Set src
+   pic.innerText = tg.initDataUnsafe.user.photo_url; // Set src
    
 </script>
 </html>
