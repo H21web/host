@@ -43,8 +43,9 @@
 </head>
 
 <body>
-   <div id="usercard"> <!-- User profile card -->
+   <div id="usernametg"> <!-- User profile card -->
    </div>
+   <div id="userimg"></div>
    <p>Just text</p> <!-- Just some text for checking -->
    <a class="link" href="https://mihailgok.ru">Link</a> <!-- Just a link for checking -->
    <p class="hint">Some little hint</p> <!-- Just a hint text for checking -->
@@ -77,8 +78,8 @@
    tg.expand(); // Expand to full window
 
    tg.MainButton.setText("Powered by MalluFiles"); // Set the main button text
-   tg.MainButton.textColor = "#F55353"; // Change button text color
-   tg.MainButton.color = "#143F6B"; // Change button background color
+   tg.MainButton.textColor = "#fff"; // Change button text color
+   tg.MainButton.color = "#090909"; // Change button background color
    tg.MainButton.show(); // Always show the main button
 
    let btn = document.getElementById("btn"); // Get the hide/show button
@@ -111,12 +112,11 @@
 
    let usercard = document.getElementById("usercard"); // Get the usercard block
 
-   let profName = document.createElement('p'); // Create a paragraph
+   let profName = document.getElementById("usernametg"); // Create a paragraph
    profName.innerText = `${tg.initDataUnsafe.user.first_name}`;
-   usercard.appendChild(profName); // Add it to the user card
-
-   let pic = document.createElement('img'); // Create an img
+   
+   let pic = document.getElementById('userimg'); // Create an img
    pic.src = tg.initDataUnsafe.user.photo_url; // Set src
-   usercard.appendChild(pic); // Add the element to the user card
+   
 </script>
 </html>
