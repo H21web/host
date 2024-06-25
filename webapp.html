@@ -50,7 +50,7 @@
    <p class="hint">Some little hint</p> <!-- Just a hint text for checking -->
    <button id="btn" class="button">Show/Hide Main Button</button> <!-- Button to hide/show the main button -->
    <button id="btnED" class="button">Enable/Disable Main Button</button> <!-- Button to enable/disable the main button -->
-
+   <a href="javascript:window.open('https://telegram.org/');">window.open() link</a> 
    <!-- Haptic Feedback Controls -->
    <ul>
        <li>Impact: 
@@ -76,11 +76,10 @@
 
    tg.expand(); // Expand to full window
 
-   tg.MainButton.text = "Changed Text"; // Change button text
-   tg.MainButton.setText("Changed Text1"); // Change button text another way
+   tg.MainButton.setText("Powered by MalluFiles"); // Set the main button text
    tg.MainButton.textColor = "#F55353"; // Change button text color
    tg.MainButton.color = "#143F6B"; // Change button background color
-   tg.MainButton.setParams({"color": "#143F6B"}); // This changes all parameters
+   tg.MainButton.show(); // Always show the main button
 
    let btn = document.getElementById("btn"); // Get the hide/show button
 
@@ -116,10 +115,8 @@
    profName.innerText = `${tg.initDataUnsafe.user.first_name}`;
    usercard.appendChild(profName); // Add it to the user card
 
-   // Works only in attachment menu
-   // let pic = document.createElement('img'); // Create an img
-   // pic.src = tg.initDataUnsafe.user.photo_url; // Set src
-   // usercard.appendChild(pic); // Add the element to the user card
+   let pic = document.createElement('img'); // Create an img
+   pic.src = tg.initDataUnsafe.user.photo_url; // Set src
+   usercard.appendChild(pic); // Add the element to the user card
 </script>
-    </html>
-    
+</html>
