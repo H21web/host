@@ -36,9 +36,7 @@
          margin-bottom: 20px
       }
 
-      #usercard{
-         text-align: center;
-      }
+      
    </style>
 </head>
 
@@ -96,16 +94,10 @@
 
    let profName = document.createElement('p'); //создаем параграф
    profName.innerText = `${tg.initDataUnsafe.user.first_name}
-   ${tg.initDataUnsafe.user.last_name}
-   ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
-   //выдем имя, "фамилию", через тире username и код языка
+   
    usercard.appendChild(profName); //добавляем 
 
-   let userid = document.createElement('p'); //создаем еще параграф 
-   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-   usercard.appendChild(userid); //добавляем
-
-
+   
    //работает только в attachment menu
    // let pic = document.createElement('img'); //создаем img
    // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
