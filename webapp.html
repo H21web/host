@@ -75,48 +75,44 @@
 <script>
    let tg = window.Telegram.WebApp; // Get the Telegram WebApp object
 
-   tg.expand(); // Expand to full window
+tg.expand(); // Expand to full window
 
-   tg.MainButton.setText("Powered by MalluFiles"); // Set the main button text
-   tg.MainButton.textColor = "#fff"; // Change button text color
-   tg.MainButton.color = "#090909"; // Change button background color
-   tg.MainButton.show(); // Always show the main button
+tg.MainButton.setText("Powered by MalluFiles"); // Set the main button text
+tg.MainButton.textColor = "#fff"; // Change button text color
+tg.MainButton.color = "#090909"; // Change button background color
+tg.MainButton.show(); // Always show the main button
 
-   let btn = document.getElementById("btn"); // Get the hide/show button
+let btn = document.getElementById("btn"); // Get the hide/show button
 
-   btn.addEventListener('click', function(){ // Add event on HTML button click
-      if (tg.MainButton.isVisible){ // If the button is visible
-         tg.MainButton.hide() // Hide the button
-      }
-      else{ // Otherwise
-         tg.MainButton.show() // Show the button
-      }
-   });
+btn.addEventListener('click', function() { // Add event on HTML button click
+    if (tg.MainButton.isVisible()) { // If the button is visible
+        tg.MainButton.hide(); // Hide the button
+    } else { // Otherwise
+        tg.MainButton.show(); // Show the button
+    }
+});
 
-   let btnED = document.getElementById("btnED"); // Get the enable/disable button
-   btnED.addEventListener('click', function(){ // Add event on HTML button click
-      if (tg.MainButton.isActive){ // If the button is active
-         tg.MainButton.setParams({"color": "#E0FFFF"}); // Change color
-         tg.MainButton.disable() // Disable the button
-      }
-      else{ // Otherwise
-         tg.MainButton.setParams({"color": "#143F6B"}); // Change color
-         tg.MainButton.enable() // Enable the button
-      }
-   });
+let btnED = document.getElementById("btnED"); // Get the enable/disable button
 
-   Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
-      // Send data as a string when the main button is clicked
-   });
+btnED.addEventListener('click', function() { // Add event on HTML button click
+    if (tg.MainButton.isActive()) { // If the button is active
+        tg.MainButton.setParams({ "color": "#E0FFFF" }); // Change color
+        tg.MainButton.disable(); // Disable the button
+    } else { // Otherwise
+        tg.MainButton.setParams({ "color": "#143F6B" }); // Change color
+        tg.MainButton.enable(); // Enable the button
+    }
+});
 
-   let usercard = document.getElementById("usercard"); // Get the usercard block
+Telegram.WebApp.onEvent('mainButtonClicked', function() {
+    tg.sendData("some string that we need to send"); 
+    // Send data as a string when the main button is clicked
+});
 
-   let profName = document.getElementById("usernametg"); // Create a paragraph
-   profName.innerText = `${tg.initDataUnsafe.user.first_name}`;
-   
-   let pic = document.getElementById('userimg'); // Create an img
-   pic.innerText = `${tg.initDataUnsafe.user.photo_url;}` // Set src
+let usercard = document.getElementById("usercard"); // Get the user card block
+let profName = document.createElement('p'); // Create a paragraph
+profName.innerText = `${tg.initDataUnsafe.user.first_name}`; // Get and set the user's first name
+usercard.appendChild(profName);
    
 </script>
 </html>
